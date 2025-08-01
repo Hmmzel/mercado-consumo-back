@@ -4,9 +4,23 @@ const cors = require("cors");
 
 const port = process.env.PORT || 3001;
 
+// Lista de orígenes permitidos
+const allowedOrigins = [
+  "https://consumo-energia-frontend.netlify.app", // si usas Netlify también
+];
+
+// Configurar CORS dinámicamente
 app.use(
   cors({
-    origin: "https://consumo-energia-frontend.netlify.app", // El dominio del frontend
+    origin: function (origin, callback) {
+      // Permitir peticiones sin origen como curl, Postman o producción SSR
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        console.log("Origen no permitido por CORS:", origin);
+        callback(new Error("No permitido por CORS"));
+      }
+    },
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type"],
   })
