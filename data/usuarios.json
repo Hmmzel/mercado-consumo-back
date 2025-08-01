@@ -1,0 +1,6 @@
+[
+  { "id": 1, "nombre": "steven", "puesto": "P-01", "cantidad_puestos": 2 },
+  { "id": 2, "nombre": "miguel", "puesto": "P-02", "cantidad_puestos": 1 },
+  { "id": 3, "nombre": "alex", "puesto": "P-03", "cantidad_puestos": 3 },
+  { "id": 4, "nombre": "pablo", "puesto": "P-04", "cantidad_puestos": 4 }
+]
