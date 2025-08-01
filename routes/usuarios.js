@@ -47,15 +47,12 @@ router.post("/", async (req, res) => {
 
 // GET para obtener todos los usuarios
 router.get("/", async (req, res) => {
-  console.log("GET /api/usuarios fue llamado");
-
   try {
     const [usuarios] = await db.query("SELECT * FROM usuarios");
-    console.log("Usuarios cargados:", usuarios);
     res.json(usuarios);
   } catch (error) {
-    console.error("Error al obtener usuarios:", error.message);
-    res.status(500).json({ error: error.message });
+    console.error("Error al obtener usuarios:", error);
+    res.status(500).json({ error: "Error al obtener usuarios" });
   }
 });
 
