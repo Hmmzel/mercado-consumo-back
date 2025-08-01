@@ -6,7 +6,7 @@ const port = process.env.PORT || 3001;
 
 app.use(
   cors({
-    origin: "https://consumo-energia-frontend.netlify.app/", // El dominio del frontend
+    origin: "https://consumo-energia-frontend.netlify.app", // El dominio del frontend
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type"],
   })
