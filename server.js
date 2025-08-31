@@ -6,7 +6,8 @@ const port = process.env.PORT || 3001;
 
 // Lista de orígenes permitidos
 const allowedOrigins = [
-  "https://mercado-lecturas.netlify.app", // si usas Netlify también
+  "https://mercado-lecturas.netlify.app",
+  "http://localhost:3000", // si usas Netlify también
 ];
 
 // Configurar CORS dinámicamente
