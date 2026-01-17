@@ -32,6 +32,7 @@ app.use(express.json());
 const consumoRoutes = require("./routes/consumos");
 const usuariosRoutes = require("./routes/usuarios");
 const lecturasRoutes = require("./routes/lecturas");
+const retornarRoutes = require("./routes/retornar");
 
 app.get("/", (req, res) => {
   res.send("¡Hola desde el backend de Node.js!");
@@ -40,6 +41,7 @@ app.get("/", (req, res) => {
 app.use("/api/consumos", consumoRoutes);
 app.use("/api/usuarios", usuariosRoutes);
 app.use("/api/lecturas", lecturasRoutes);
+app.use("/api/retornar", lecturasRoutes);
 
 app.listen(port, () => {
   console.log(`Servidor escuchando en el puerto ${port}`);

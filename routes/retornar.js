@@ -11,3 +11,5 @@ router.get("api/resultado", async (req, res) => {
     res.status(500).json({ error: "Error al obtener usuarios" });
   }
 });
+
+module.exports = router;
